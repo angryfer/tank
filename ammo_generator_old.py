@@ -25,15 +25,15 @@ def parse_file(path):
 def add_ammo_fields(AMMO_PATH):
     with open(AMMO_PATH,'w+') as file:
         for i in SYMBOLS:
-            url = f"/hub0/upstream/symlistfeed/fields/reuters?symbol={i}"
-            ammo2 = f"GET {url} HTTP/1.0\nHost: {host}\nUser-Agent: xxx (shell 1)\r\n\r\n\r\n"
-            ammo = f"{len(ammo2)}\n{ammo2}"
+            url = "/hub0/upstream/symlistfeed/fields/reuters?symbol={}".format(i)
+            ammo2 = "GET {} HTTP/1.0\nHost: {}\nUser-Agent: xxx (shell 1)\r\n\r\n\r\n".format(url,host)
+            ammo = "{}\n{}".format(len(ammo2),ammo2)
             file.write(ammo)
             
-            url_p = f"/hub0/upstream/symlistfeed/batchfields/reuters?fields=*"
-            symb = f'["{i}"]'
-            ammo2 = f"POST {url_p} HTTP/1.0\nHost: {host}\nUser-Agent: xxx (shell 1)\nContent-Type: application/json\nContent-Length: {len(symb)}\r\n\r\n{symb}\r\n\r\n\r\n"
-            ammo = f"{len(ammo2)}\n{ammo2}"
+            url_p = "/hub0/upstream/symlistfeed/batchfields/reuters?fields=*"
+            symb = '["{}"]'.format(i)
+            ammo2 = "POST {} HTTP/1.0\nHost: {}\nUser-Agent: xxx (shell 1)\nContent-Type: application/json\nContent-Length: {}\r\n\r\n{}\r\n\r\n\r\n".format(url_p, host,len(symb),symb )
+            ammo = "{}\n{}".format(len(ammo2),ammo2)
             file.write(ammo)
 
 

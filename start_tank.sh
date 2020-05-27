@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-python3 ammo_generator.py
+python3 ammo_generator_old.py
 sudo docker run \
     -v $(pwd):/var/loadtest \
     --net host \
