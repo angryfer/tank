@@ -1,0 +1,15 @@
+phantom:
+  address: hub01.xtools.tv # [Target's address]:[target's port]
+  ammofile: ammo.txt
+  ammo_type: phantom
+  load_profile:
+    load_type: rps # schedule load by defining requests per second
+    schedule: line(5, 7, 10m) # starting from 1rps growing linearly to 10rps during 10 minutes
+console:
+  enabled: true # enable console output
+telegraf:
+  enabled: false
+
+#tank:
+ # enabled: true
+  #plugin_web: yandextank.plugins.Report
