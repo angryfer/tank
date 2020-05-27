@@ -3,5 +3,5 @@ python3 ammo_generator.py
 docker run \
     -v $(pwd):/var/loadtest \
     --net host \
-    --rm
+    --rm \
     -it direvius/yandex-tank
