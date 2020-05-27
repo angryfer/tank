@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 python3 ammo_generator.py
-docker run \
+sudo docker run \
     -v $(pwd):/var/loadtest \
     --net host \
     --rm \
