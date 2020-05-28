@@ -18,7 +18,7 @@ def parse_file(path):
             try:
                 i=json.loads(i)
                 SYMBOLS.append(i['exchange-listed']+':'+i['symbol'])
-            except json.decoder.JSONDecodeError as e :
+            except Exception as e :
                 print(i)
 
 
